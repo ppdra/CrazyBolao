@@ -1,0 +1,53 @@
+{
+    "files": {
+        "resources/js/utils.js": [
+            "dark-theme"
+        ],
+        "resources/views/components/ui/tab/index.blade.php": [
+            "tabs"
+        ],
+        "resources/views/components/ui/tab/group.blade.php": [
+            "tabs"
+        ],
+        "resources/views/components/ui/tab/panel.blade.php": [
+            "tabs"
+        ]
+    },
+    "helpers": {
+        "popup": [
+            "select"
+        ]
+    },
+    "internalDependencies": {
+        "icon": [
+            "button",
+            "badge",
+            "navlist",
+            "sidebar",
+            "navbar",
+            "input",
+            "select",
+            "dropdown"
+        ],
+        "button": [
+            "badge",
+            "navlist",
+            "sidebar",
+            "navbar",
+            "theme-switcher"
+        ],
+        "badge": [
+            "navlist",
+            "navbar"
+        ],
+        "navlist": [
+            "sidebar"
+        ],
+        "dropdown": [
+            "theme-switcher"
+        ],
+        "text": [
+            "select"
+        ]
+    }
+}

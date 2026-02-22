@@ -1,0 +1,52 @@
+@php
+    $menu = [
+        ['label' => 'Home', 'icon' => 'home', 'route' => '/'],
+        ['label' => 'Matches', 'icon' => 'home', 'route' => '/matches'],
+        ['label' => 'Ranking', 'icon' => 'trophy', 'route' => '/ranking'],
+        ['label' => 'Stats', 'icon' => 'chart-bar', 'route' => '/'],
+        ['label' => 'My Bets', 'icon' => 'home', 'route' => '/'],
+        ['label' => 'Rules', 'icon' => 'newspaper', 'route' => '/'],
+    ];
+@endphp
+
+
+
+
+<x-ui.sidebar>
+    <x-slot:brand>
+        <x-ui.brand name="Sheaf UI" href="#">
+            <x-slot:logo>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="size-5">
+                    <rect x="15" y="10" width="80" height="15" fill="currentColor" rx="5" ry="0" />
+                    <rect x="15" y="30" width="60" height="15" fill="currentColor" />
+                    <rect x="15" y="50" width="30" height="15" fill="currentColor" />
+                    <rect x="15" y="55" width="10" height="30" fill="currentColor" />
+                </svg>
+            </x-slot:logo>
+        </x-ui.brand>
+    </x-slot:brand>
+    <x-ui.navlist class="mt-5">
+
+        @foreach ($menu as $item)
+            @if (!isset($item['subItems']))
+                <x-ui.navlist.item :label="$item['label']" :icon="$item['icon']" :href="$item['route']" />
+            @else
+                <x-ui.navlist.group :label="$item['subItems']['label']" :collapsable="true">
+                    @foreach ($item['subItems']['items'] as $subItem)
+                        <x-ui.navlist.item :label="$subItem['label']" :href="$subItem['route']" />
+                    @endforeach
+                </x-ui.navlist.group>
+            @endif
+        @endforeach
+
+
+
+        <x-ui.navlist.group label="Management" collapsable>
+            <x-ui.navlist.item label="Settings" icon="cog-6-tooth" href="/account" />
+        </x-ui.navlist.group>
+    </x-ui.navlist>
+
+    <x-ui.sidebar.push />
+
+   
+</x-ui.sidebar>
