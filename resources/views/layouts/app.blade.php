@@ -22,7 +22,7 @@
                 {{ $slot }}
             </div>
 
-            
+            <x-ui.toast position="bottom-right" maxToasts="5" />
         </x-ui.layout.main>
     </x-ui.layout>
 

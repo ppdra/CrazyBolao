@@ -16,7 +16,7 @@
 
                 <span
                     class="text-xs sm:text-sm text-(--color-muted)] text-right leading-tight truncate max-w-[60%] sm:max-w-none">
-                    {{ $match->utc_date }}
+                    {{ $match->utc_date->tz(session('tz')) }}
                 </span>
             </div>
         </div>

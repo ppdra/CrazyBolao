@@ -40,10 +40,6 @@
         @endforeach
 
 
-
-        <x-ui.navlist.group label="Management" collapsable>
-            <x-ui.navlist.item label="Settings" icon="cog-6-tooth" href="/account" />
-        </x-ui.navlist.group>
     </x-ui.navlist>
 
     <x-ui.sidebar.push />
