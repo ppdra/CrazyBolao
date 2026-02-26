@@ -94,7 +94,6 @@
                         @if ($match->utc_date->isPast())
                             <x-ui.tab label="Results" name="results" icon="document-chart-bar" />
                         @endif
-                        <x-ui.tab label="Joker" name="joker" icon="cog-6-tooth" />
                     </x-ui.tab.group>
 
                     <x-ui.tab.panel name="bet">

@@ -26,9 +26,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/account', AccountPage::class)->name('account');
 
-    Route::get('/tags', TagsPage::class)->name('tags');
-
-
 
      Route::get('/logout', LogoutController::class)
         ->name('logout');
