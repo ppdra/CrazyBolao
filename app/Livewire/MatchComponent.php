@@ -16,6 +16,8 @@ use Livewire\Component;
 class MatchComponent extends Component
 {
     public Game $match;
+    public int $realHomeScore = 0;
+    public int $realAwayScore = 0;
     public int $homeScore = 0;
     public int $awayScore = 0;
     public $userBet;
@@ -31,6 +33,11 @@ class MatchComponent extends Component
             $this->homeScore = $userBet->result->home_score;
             $this->awayScore = $userBet->result->away_score;
             $this->betIsPlaced = true;
+        }
+
+        if ($match->gameResult()->exists()) {
+            $this->realHomeScore = $match->gameResult->result->home_score;
+            $this->realAwayScore = $match->gameResult->result->away_score;
         }
     }
 

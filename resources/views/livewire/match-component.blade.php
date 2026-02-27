@@ -7,9 +7,9 @@
 
         <!-- Top row: badge + datetime -->
         <div class="flex items-start justify-between gap-3">
-            <div class="shrink-0" @if ($this->shouldPoll()) wire:poll.30s @endif>
+            {{-- <div class="shrink-0" @if ($this->shouldPoll()) wire:poll.30s @endif>
                 <x-match-badge-status :match="$match" />
-            </div>
+            </div> --}}
 
             <div class="flex space-x-2 ">
                 <x-ui.icon name="calendar-days" class="text-(--color-muted) size-5" />
@@ -28,7 +28,7 @@
                     <x-ui.badge size='sm'>{{ $match->group_name->label() }}</x-ui.badge>
                     <x-ui.badge size='sm'>Matchday {{ $match->matchday }}</x-ui.badge>
                 @else
-                    <x-ui.badge size='sm'>{{ str_replace('_', ' ', $match->stage->name) }}</x-ui.badge>
+                    <x-ui.badge size='sm'>{{ str_replace('_', ' ', $match->stage->name ?? '') }}</x-ui.badge>
                 @endif
             </div>
 
@@ -64,9 +64,9 @@
 
                         <!-- Score -->
                         <div class="flex items-center justify-center gap-2 sm:gap-4 font-extrabold shrink-0">
-                            <span class="text-2xl sm:text-4xl leading-none">0</span>
+                            <span class="text-2xl sm:text-4xl leading-none">{{ $realHomeScore }}</span>
                             <span class="text-(--color-primary)] text-lg sm:text-2xl font-medium leading-none">x</span>
-                            <span class="text-2xl sm:text-4xl leading-none">0</span>
+                            <span class="text-2xl sm:text-4xl leading-none">{{ $realAwayScore }}</span>
                         </div>
 
                         <!-- Away Team -->

@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->integer('external_id')->nullable();
+            $table->integer('external_id')->unique();
             $table->foreignIdFor(Team::class, 'home_id')->cascadeOnDelete()->nullable();
             $table->foreignIdFor(Team::class, 'away_id')->cascadeOnDelete()->nullable();
             $table->enum('group_name', MatchGroupEnum::cases())->nullable();

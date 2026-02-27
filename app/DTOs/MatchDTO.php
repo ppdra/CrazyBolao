@@ -20,6 +20,8 @@ final class MatchDTO
         public readonly ?MatchStageEnum $stage,
         public readonly Carbon $utcDate,
         public readonly MatchStatusEnum $status,
+        public readonly ?int $homeScore,
+        public readonly ?int $awayScore ,
     ) {}
 
     public static function fromApi(object $match): self
@@ -33,6 +35,8 @@ final class MatchDTO
             stage: MatchStageEnum::tryFrom($match->stage) ?? null,
             utcDate: Carbon::parse($match->utcDate)->utc(),
             status: MatchStatusEnum::fromApi($match->status),
+            homeScore: $match->score['fullTime']['home'] ?? null,
+            awayScore: $match->score['fullTime']['away'] ?? null,
         );
     }
 }

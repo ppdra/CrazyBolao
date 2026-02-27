@@ -9,4 +9,10 @@ class GameResult extends Model
 {
     /** @use HasFactory<\Database\Factories\GameResultFactory> */
     use HasFactory;
+
+
+    public function result()
+    {
+        return $this->belongsTo(Result::class);
+    }
 }

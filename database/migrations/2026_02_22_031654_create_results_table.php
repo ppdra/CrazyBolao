@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer('home_score');
             $table->integer('away_score');
             $table->timestamps();
+
+            $table->unique(['home_score', 'away_score']);
         });
     }
 

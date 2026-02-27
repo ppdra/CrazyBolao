@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->integer('external_id')->nullable();
+            $table->integer('external_id')->unique();
             $table->string('name');
             $table->string('slug')->nullable();
             $table->string('logo_url')->nullable();
