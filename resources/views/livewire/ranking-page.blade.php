@@ -1,7 +1,7 @@
 @use('App\Enum\MatchStageEnum')
 
 <div>
-    <div class="w-full bg-(--color-background) rounded-2xl p-4">
+    {{-- <div class="w-full bg-(--color-background) rounded-2xl p-4">
         <x-ui.heading level="h2" size="md">Filters</x-ui.heading>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 mt-4 ">
@@ -14,7 +14,7 @@
                 @endforeach
             </x-ui.select>
         </div>
-    </div>
+    </div> --}}
 
 
 
