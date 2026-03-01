@@ -1,10 +1,10 @@
 @php
     $menu = [
         ['label' => 'Home', 'icon' => 'home', 'route' => '/'],
-        ['label' => 'Matches', 'icon' => 'home', 'route' => '/matches'],
+        ['label' => 'Matches', 'icon' => 'globe-americas', 'route' => '/matches'],
         ['label' => 'Ranking', 'icon' => 'trophy', 'route' => '/ranking'],
-        ['label' => 'Stats', 'icon' => 'chart-bar', 'route' => '/'],
-        ['label' => 'Rules', 'icon' => 'newspaper', 'route' => '/'],
+        ['label' => 'Stats', 'icon' => 'chart-bar', 'route' => '/stats'],
+        ['label' => 'Rules', 'icon' => 'newspaper', 'route' => '/rules'],
     ];
 @endphp
 

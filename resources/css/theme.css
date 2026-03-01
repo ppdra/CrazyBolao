@@ -1,21 +1,32 @@
-/* By Sheaf.dev */
 @theme inline {
     /* base color variables */
-
-    /* --color-neutral-900: var(--color-neutral-950); */
-
-    /* primary color varibles */
     --color-primary: var(--color-neutral-800);
     --color-primary-content: var(--color-neutral-800);
     --color-primary-fg: var(--color-white);
-
 
     --color-surface: var(--color-white);
     --color-border:  var(--color-neutral-700);
     --color-muted:   var(--color-neutral-400);
     --color-background: var(--color-gray-100);
 
-    --color-accent: var(--color-violet-600);
+    --color-accent: var(--color-sky-800);
+
+    /* ✅ NOVAS (semânticas) */
+    --color-card: var(--color-surface);
+    --color-card-border: var(--color-border);
+
+    --color-overlay: color-mix(in oklab, var(--color-neutral-950) 45%, transparent);
+    --color-hero-glow-1: color-mix(in oklab, var(--color-accent) 45%, transparent);
+    --color-hero-glow-2: color-mix(in oklab, var(--color-indigo-500) 35%, transparent);
+
+    --color-btn: var(--color-accent);
+    --color-btn-fg: var(--color-white);
+    --color-btn-hover: color-mix(in oklab, var(--color-accent) 85%, white 15%);
+
+    --color-success: var(--color-emerald-500);
+    --color-warning: var(--color-amber-400);
+
+    --color-ring: color-mix(in oklab, var(--color-accent) 35%, transparent);
 
     /* radius variables */
     --radius-field: 0.25rem;
@@ -25,16 +36,35 @@
 
 @layer theme {
     .dark {
-        --color-primary: var(--color-white) !important ;
+        --color-primary: var(--color-white) !important;
         --color-primary-content: var(--color-white) !important;
-        --color-primary-fg:  var(--color-neutral-800) !important;
+        --color-primary-fg: var(--color-neutral-800) !important;
 
         --color-surface: var(--color-neutral-950) !important;
         --color-border:  var(--color-neutral-700) !important;
         --color-muted:   var(--color-neutral-400) !important;
-
         --color-background: var(--color-neutral-900) !important;
 
-          --color-accent: var(--color-violet-600) !important;
+        --color-accent: var(--color-sky-800) !important;
+
+        /* ✅ NOVAS (dark override) */
+        --color-card: color-mix(in oklab, var(--color-surface) 92%, white 8%) !important;
+        --color-card-border: color-mix(in oklab, var(--color-border) 90%, transparent) !important;
+
+        --color-overlay: color-mix(in oklab, black 55%, transparent) !important;
+        --color-hero-glow-1: color-mix(in oklab, var(--color-accent) 55%, transparent) !important;
+        --color-hero-glow-2: color-mix(in oklab, var(--color-indigo-500) 40%, transparent) !important;
+
+        --color-btn: var(--color-accent) !important;
+        --color-btn-fg: var(--color-white) !important;
+        --color-btn-hover: color-mix(in oklab, var(--color-accent) 88%, white 12%) !important;
+
+        --color-success: var(--color-emerald-400) !important;
+        --color-warning: var(--color-amber-300) !important;
+
+        --color-ring: color-mix(in oklab, var(--color-accent) 45%, transparent) !important;
+
+        --radius-field: 0.25rem;
+        --radius-box: 0.5rem;
     }
 }

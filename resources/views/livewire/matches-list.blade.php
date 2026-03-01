@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="flex justify-between m-2">
+    {{-- <div class="flex justify-between m-2">
 
         <div>
             @if (!$gamesList->onFirstPage())
@@ -70,7 +70,7 @@
                 </x-ui.link>
             </div>
         @endif
-    </div>
+    </div> --}}
 
     <div class="mt-5 grid sm:grid-cols-1 md:grid-cols-2  gap-4 place-items-center h-full">
         @foreach ($gamesList as $match)
@@ -80,8 +80,8 @@
         @endforeach
     </div>
 
-    <div class="mt-5">
+    {{-- <div class="mt-5">
         {{ $gamesList->links() }}
-    </div>
+    </div> --}}
 
 </div>

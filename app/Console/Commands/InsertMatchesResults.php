@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Enum\MatchStatusEnum;
 use App\Models\Game;
 use App\Models\Result;
 use App\Services\Apis\FootballDataOrg\ApiService;
@@ -36,6 +37,11 @@ class InsertMatchesResults extends Command
 
         foreach ($matches as $match) {
             $game = Game::where('external_id', $match->externalId)->first();
+            if ($game->status !== MatchStatusEnum::FINISHED) {
+                $game->update([
+                    'status' => MatchStatusEnum::FINISHED,
+                ]);
+            }
 
             if (!$game->gameResult()->exists()) {
                 $result = Result::where('home_score', $match->homeScore)

@@ -10,3 +10,4 @@ class Team extends Model
     /** @use HasFactory<\Database\Factories\TeamsFactory> */
     use HasFactory;
 }
+    

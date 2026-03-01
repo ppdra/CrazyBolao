@@ -69,7 +69,8 @@
                     ">
                             <!-- posição -->
                             <td class="px-4 py-3 font-semibold">
-                                <div class="relative group w-8 h-8">
+                                {{ $index + 1 }}
+                                {{-- <div class="relative group w-8 h-8">
                                     <img src="{{ asset('images/position-' . $ranking->position . '.jpeg') }}"
                                         alt="Avatar"
                                         class="w-8 h-8 rounded-full object-cover
@@ -77,7 +78,7 @@
                    group-hover:scale-550
                    group-hover:z-50
                    relative">
-                                </div>
+                                </div> --}}
                             </td>
 
                             <td class="px-4 py-3 font-semibold flex text-2xl">

@@ -32,6 +32,8 @@ class MatchesList extends Component
         $this->groupOptsList = $this->getGroupOptsList();
         $this->stageOptsList = $this->getStageOptsList();
         $this->statusOptsList = MatchStatusEnum::cases();
+
+        $this->selectedStatus = [MatchStatusEnum::SCHEDULED->value];
     }
 
     public function updatedSelectedCountry(): void
@@ -80,7 +82,7 @@ class MatchesList extends Component
             ->when($this->selectedGroup ?? null, fn($q) => $q->whereIn('group_name', $this->selectedGroup))
             ->when($this->selectedStage, fn($q) => $q->where('stage', $this->selectedStage))
             ->orderBy('utc_date')
-            ->paginate(10);
+            ->get();
     }
 
     // todo refactor to use cache
