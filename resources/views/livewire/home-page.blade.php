@@ -30,7 +30,8 @@
                     </h1>
 
                     <p class="mt-2 max-w-xl text-(--color-muted)">
-                        Participe, pontue se for capaz e suba no ranking do bolão mais lúcido do Brasil. Veja os próximos jogos e
+                        Participe, pontue se for capaz e suba no ranking do bolão mais lúcido do Brasil. Veja os
+                        próximos jogos e
                         faça seu palpite.
                     </p>
 
@@ -137,6 +138,11 @@
             </div>
         </div>
     </section>
+
+    <div class="mt-4">
+        <livewire:live-matches />
+    </div>
+        
 
 
     <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-2 mt-4 ">
