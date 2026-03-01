@@ -30,7 +30,7 @@
         </div>
 
         <div class="divide-y divide-(--color-card-border)">
-            @foreach ($rankings as $row)
+            @forelse ($rankings as $row)
                 @php
                     $isTop1 = $row->position === 1;
                     $badge = match ($row->position) {
@@ -80,7 +80,27 @@
 
 
                 </div>
-            @endforeach
+            @empty
+                <div class="px-6 py-10 text-center">
+                    <div class="flex flex-col items-center gap-3">
+                        <div
+                            class="inline-grid h-12 w-12 place-items-center rounded-2xl border border-(--color-card-border)">
+                            🏆
+                        </div>
+
+                        <div>
+                            <p class="text-sm font-semibold text-(--color-primary)">
+                                Ranking ainda não disponível
+                            </p>
+                            <p class="mt-1 text-xs text-(--color-muted)">
+                                Ainda não há dados suficientes para gerar a classificação.
+                            </p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            @endforelse
         </div>
     </div>
 

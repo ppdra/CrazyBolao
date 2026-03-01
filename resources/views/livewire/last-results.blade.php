@@ -42,7 +42,7 @@
 
     <!-- List -->
     <div class="mt-5 space-y-3">
-        @foreach ($lastResults as $r)
+        @forelse ($lastResults as $r)
             <div
                 class="rounded-2xl border border-(--color-card-border) bg-transparent p-4 transition
                         hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-45px_rgba(0,0,0,0.85)]">
@@ -84,7 +84,25 @@
 
                 </div>
             </div>
-        @endforeach
+        @empty
+            <div class="rounded-2xl border border-(--color-card-border) bg-transparent p-8 text-center">
+                <div class="flex flex-col items-center gap-3">
+                    <div
+                        class="inline-grid h-12 w-12 place-items-center rounded-2xl border border-(--color-card-border)">
+                        🧾
+                    </div>
+
+                    <div>
+                        <p class="text-sm font-semibold text-(--color-primary)">
+                            Nenhum resultado ainda
+                        </p>
+                        <p class="mt-1 text-xs text-(--color-muted)">
+                            As partidas validadas vão aparecer aqui assim que houver pontuação.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        @endforelse
     </div>
 
     <!-- Footer -->

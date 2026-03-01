@@ -2,18 +2,18 @@
 <div class="p-2">
 
     <div class="w-full bg-(--color-background) rounded-2xl p-4">
-        <x-ui.heading level="h2" size="md">Filters</x-ui.heading>
+        <x-ui.heading level="h2" size="md">Filtros</x-ui.heading>
 
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 mt-4 ">
 
-            <x-ui.select placeholder="Choose status..." wire:model.live="selectedStatus" multiple clearable>
+            <x-ui.select placeholder="Selecione os status..." wire:model.live="selectedStatus" multiple clearable>
                 @foreach ($statusOptsList as $opt)
                     <x-ui.select.option value="{{ $opt->value }}">{{ $opt->name }}</x-ui.select.option>
                 @endforeach
 
             </x-ui.select>
 
-            <x-ui.select placeholder="Select by group..." wire:model.live="selectedGroup" multiple clearable
+            <x-ui.select placeholder="Selecione o grupo..." wire:model.live="selectedGroup" multiple clearable
                 :disabled="$selectedStage !== '' && $selectedStage !== MatchStageEnum::GROUP_STAGE->value">
                 @foreach ($groupOptsList as $group)
                     <x-ui.select.option value="{{ $group }}">
@@ -22,7 +22,7 @@
                 @endforeach
             </x-ui.select>
 
-            <x-ui.select placeholder="Select by stage..." wire:model.live="selectedStage" clearable :disabled="!empty($selectedGroup)">
+            <x-ui.select placeholder="Selecione a fase..." wire:model.live="selectedStage" clearable :disabled="!empty($selectedGroup)">
                 @foreach ($stageOptsList as $stage)
                     <x-ui.select.option value="{{ $stage }}">
                         {{ str_replace('_', ' ', $stage->value) }}
@@ -30,18 +30,18 @@
                 @endforeach
             </x-ui.select>
 
-            <x-ui.select placeholder="Find a country..." multiple searchable clearable wire:model.live="selectedCountry">
+            <x-ui.select placeholder="Selecione os países..." multiple searchable clearable wire:model.live="selectedCountry">
                 @foreach ($countryOptsList as $id => $country)
                     <x-ui.select.option value="{{ $id }}">{{ $country }}</x-ui.select.option>
                 @endforeach
             </x-ui.select>
 
-            <x-ui.select placeholder="Select by bet status..." wire:model.live="selectedBetIsPlaced" clearable >
+            <x-ui.select placeholder="Selecione pelo status da aposta..." wire:model.live="selectedBetIsPlaced" clearable >
                     <x-ui.select.option value="true">
-                        Bet Placed
+                        ✅ Aposta Realizada
                     </x-ui.select.option>
                     <x-ui.select.option value="false">
-                        No Bet
+                        ❌ Sem Aposta
                     </x-ui.select.option>
             </x-ui.select>
         </div>

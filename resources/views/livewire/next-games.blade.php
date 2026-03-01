@@ -21,7 +21,7 @@
 
         <!-- List -->
         <div class="mt-5 space-y-3">
-            @foreach ($nextGames as $game)
+            @forelse ($nextGames as $game)
                 @php
                     $isAuthUserBeted = $game->bets->where('user_id', Auth::id())->where('status', true)->first();
 
@@ -95,7 +95,26 @@
 
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="rounded-2xl border border-(--color-card-border) bg-transparent p-8 text-center">
+                    <div class="flex flex-col items-center gap-3">
+                        <div
+                            class="inline-grid h-12 w-12 place-items-center rounded-2xl border border-(--color-card-border)">
+                            ⚽
+                        </div>
+
+                        <div>
+                            <p class="text-sm font-semibold text-(--color-primary)">
+                                Nenhum jogo disponível
+                            </p>
+                            <p class="mt-1 text-xs text-(--color-muted)">
+                                Ainda não há partidas programadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforelse
+
         </div>
 
         <!-- Footer -->
@@ -106,7 +125,7 @@
         </div>
         <div>
             <p class="text-xs text-(--color-muted)">
-            Última Atualização: {{ now()->tz(session('tz')) }}
+                Última Atualização: {{ now()->tz(session('tz')) }}
 
             </p>
         </div>
