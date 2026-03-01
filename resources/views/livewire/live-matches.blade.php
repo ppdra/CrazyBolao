@@ -118,7 +118,7 @@
             </div>
 
             <div class="mt-4 text-xs text-(--color-muted)">
-                Última atualização: {{ now()->tz(session('tz'))->format('d/m H:i:s') }}
+                Última atualização: {{ now()->tz(session('tz')) }}
             </div>
         </section>
     @endif
