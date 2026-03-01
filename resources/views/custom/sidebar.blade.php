@@ -3,7 +3,7 @@
         ['label' => 'Home', 'icon' => 'home', 'route' => '/'],
         ['label' => 'Partidas', 'icon' => 'globe-americas', 'route' => '/matches'],
         ['label' => 'Ranking', 'icon' => 'trophy', 'route' => '/ranking'],
-        ['label' => 'Estatísticas', 'icon' => 'chart-bar', 'route' => '/stats'],
+        // ['label' => 'Estatísticas', 'icon' => 'chart-bar', 'route' => '/stats'],
         ['label' => 'Regras', 'icon' => 'newspaper', 'route' => '/rules'],
     ];
 @endphp
