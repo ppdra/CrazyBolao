@@ -8,7 +8,29 @@
     <title>{{ $title ?? config('app.name') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script>
+        // Load dark mode before page renders to prevent flicker
+        const loadDarkMode = () => {
+            const theme = localStorage.getItem('theme') ?? 'system'
 
+            if (
+                theme === 'dark' ||
+                (theme === 'system' &&
+                    window.matchMedia('(prefers-color-scheme: dark)')
+                    .matches)
+            ) {
+                document.documentElement.classList.add('dark')
+            }
+        }
+
+        // Initialize on page load
+        loadDarkMode();
+
+        // Reinitialize after Livewire navigation (for spa mode)
+        document.addEventListener('livewire:navigated', function() {
+            loadDarkMode();
+        });
+    </script>
     @livewireStyles
 </head>
 
