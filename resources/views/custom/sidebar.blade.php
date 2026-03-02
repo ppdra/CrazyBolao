@@ -14,7 +14,7 @@
 <x-ui.sidebar>
     <x-slot:brand>
         <x-ui.brand href="/"
-            logo="https://img.elo7.com.br/product/685x685/2B54CD8/big-poster-filme-joker-coringa-joaquin-phoenix-lo06-90x60-cm-filme-joker.jpg"
+            logo="{{ asset('images/logo.png') }}"
             name="Crazy Dot" alt="Crazy Dot" logoClass="rounded-full size-12" />
     </x-slot:brand>
     <x-ui.navlist class="mt-5">

@@ -6,7 +6,7 @@
             <x-slot:button class="justify-center">
                 {{-- <x-ui.avatar size="sm" src="{{ asset('images/position-' . Auth::user()->ranking->position . '.jpeg') }}" circle alt="Profile Picture" /> --}}
 
-                    <x-ui.avatar size="sm" src="https://img.elo7.com.br/product/685x685/2B54CD8/big-poster-filme-joker-coringa-joaquin-phoenix-lo06-90x60-cm-filme-joker.jpg" circle alt="Profile Picture" />
+                    <x-ui.avatar size="sm" src="{{ asset('images/logo.png') }}" circle alt="Profile Picture" />
             </x-slot:button>
 
             <x-slot:menu class="w-56">
