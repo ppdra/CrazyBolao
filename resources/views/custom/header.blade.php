@@ -1,3 +1,9 @@
+@php
+    $langs = [
+        ['locale' => 'pt_BR', 'flag' => '🇧🇷', 'label' => 'PT'],
+        ['locale' => 'en', 'flag' => '🇺🇸', 'label' => 'EN']
+    ];
+@endphp
 <x-ui.layout.header>
     <x-ui.sidebar.toggle class="md:hidden" />
 
@@ -17,13 +23,12 @@
                 </x-ui.dropdown.group>
 
                 <x-ui.dropdown.group label="{{ __('header.language') }}">
-                    <x-ui.dropdown.item href="{{ route('lang.switch', ['locale' => 'pt_BR']) }}">
-                        🇧🇷 PT
-                    </x-ui.dropdown.item>
-
-                    <x-ui.dropdown.item href="{{ route('lang.switch', ['locale' => 'en']) }}">
-                        🇺🇸 EN
-                    </x-ui.dropdown.item>
+                    @foreach ($langs as $lang)
+                        <x-ui.dropdown.item class="{{ App::getLocale() === $lang['locale'] ? 'bg-(--color-accent)/20' : '' }}" href="{{ route('lang.switch', ['locale' => $lang['locale']]) }}">
+                            {{ $lang['flag'] }} {{ $lang['label'] }}
+                        </x-ui.dropdown.item>
+                    @endforeach
+                    
 
                 </x-ui.dropdown.group>
 

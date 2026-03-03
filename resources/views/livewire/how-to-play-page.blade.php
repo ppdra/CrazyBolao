@@ -35,7 +35,6 @@
 
     <x-ui.modal id="slideover-demo" heading="{{ __('instructions.ui.slideover.heading') }}"
         description="{{ __('instructions.ui.slideover.description') }}" slideover>
-
         <div class="space-y-6 mt-4">
 
             @foreach ($sections as $section)
