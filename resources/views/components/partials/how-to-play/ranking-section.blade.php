@@ -1,14 +1,13 @@
-<section id="ranking" class="rounded-2xl border border-(--color-card-border) bg-(--color-card) p-6 md:p-8">
+<section id="{{ $id }}" class="rounded-2xl border border-(--color-card-border) bg-(--color-card) p-6 md:p-8">
 
     <!-- Header -->
     <div>
         <h2 class="text-xl md:text-2xl font-extrabold text-(--color-primary)">
-            🏆 Ranking
+            🏆 {{ __('instructions.sections.ranking.title') }}
         </h2>
 
         <p class="mt-2 text-sm text-(--color-muted) max-w-2xl">
-            O ranking é atualizado automaticamente com base nos palpites validados.
-            Abaixo explicamos como os pontos são calculados e quando a classificação é atualizada.
+            {{ __('instructions.sections.ranking.description') }}
         </p>
     </div>
 
@@ -23,21 +22,36 @@
             </div>
 
             <h3 class="text-sm md:text-base font-semibold text-(--color-primary)">
-                Como os pontos são calculados
+                {{ __('instructions.sections.ranking.step_1.title') }}
             </h3>
         </div>
 
         <p class="mt-3 text-sm text-(--color-muted)">
-            Cada palpite validado gera uma pontuação baseada na precisão do resultado:
+            {{ __('instructions.sections.ranking.step_1.intro') }}
         </p>
 
         @php
             $ptsPossibilities = [
-                ['label' => '7 pontos', 'description' => 'Placar exato'],
-                ['label' => '5 pontos', 'description' => 'Time vencedor + gols de algum dos times'],
-                ['label' => '3 pontos', 'description' => 'Time vencedor ou empate'],
-                ['label' => '2 pontos', 'description' => 'gols de um dos times'],
-                ['label' => '0 pontos', 'description' => 'Nao acertou nada'],
+                [
+                    'label' => __('instructions.sections.ranking.step_1.points.0.label'),
+                    'description' => __('instructions.sections.ranking.step_1.points.0.description'),
+                ],
+                [
+                    'label' => __('instructions.sections.ranking.step_1.points.1.label'),
+                    'description' => __('instructions.sections.ranking.step_1.points.1.description'),
+                ],
+                [
+                    'label' => __('instructions.sections.ranking.step_1.points.2.label'),
+                    'description' => __('instructions.sections.ranking.step_1.points.2.description'),
+                ],
+                [
+                    'label' => __('instructions.sections.ranking.step_1.points.3.label'),
+                    'description' => __('instructions.sections.ranking.step_1.points.3.description'),
+                ],
+                [
+                    'label' => __('instructions.sections.ranking.step_1.points.4.label'),
+                    'description' => __('instructions.sections.ranking.step_1.points.4.description'),
+                ],
             ];
         @endphp
         <div class="mt-4 grid md:grid-cols-3 gap-3">
@@ -53,20 +67,32 @@
 
         <div class="mt-5 rounded-xl border border-(--color-card-border) bg-transparent p-4">
             <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">
-                Exemplo prático
+                {{ __('instructions.sections.ranking.step_1.example_title') }}
             </p>
 
             <div class="mt-2 text-sm text-(--color-muted) space-y-1">
-                <p><span class="font-semibold text-(--color-primary)">Palpite:</span> 2 x 1</p>
-                <p><span class="font-semibold text-(--color-primary)">Resultado Final:</span> 2 x 1 → 7 pontos
+                <p><span
+                        class="font-semibold text-(--color-primary)">{{ __('instructions.sections.ranking.step_1.example.bet') }}:</span>
+                    2 x 1</p>
+                <p><span
+                        class="font-semibold text-(--color-primary)">{{ __('instructions.sections.ranking.step_1.example.final_result') }}:</span>
+                    2 x 1 → 7 pts
                 </p>
-                <p><span class="font-semibold text-(--color-primary)">Resultado Final:</span> 2 x 0 → 5 pontos
+                <p><span
+                        class="font-semibold text-(--color-primary)">{{ __('instructions.sections.ranking.step_1.example.final_result') }}:</span>
+                    2 x 0 → 5 pts
                 </p>
-                <p><span class="font-semibold text-(--color-primary)">Resultado Final:</span> 3 x 2 → 3 pontos
+                <p><span
+                        class="font-semibold text-(--color-primary)">{{ __('instructions.sections.ranking.step_1.example.final_result') }}:</span>
+                    3 x 2 → 3 pts
                 </p>
-                <p><span class="font-semibold text-(--color-primary)">Resultado Final:</span> 0 x 1 → 2 pontos
+                <p><span
+                        class="font-semibold text-(--color-primary)">{{ __('instructions.sections.ranking.step_1.example.final_result') }}:</span>
+                    0 x 1 → 2 pts
                 </p>
-                <p><span class="font-semibold text-(--color-primary)">Resultado Final:</span> 0 x 1 → 0 ponto
+                <p><span
+                        class="font-semibold text-(--color-primary)">{{ __('instructions.sections.ranking.step_1.example.final_result') }}:</span>
+                    0 x 1 → 0 ponto
                 </p>
             </div>
         </div>
@@ -84,25 +110,22 @@
             </div>
 
             <h3 class="text-sm md:text-base font-semibold text-(--color-primary)">
-                Quando os cálculos são realizados
+                {{ __('instructions.sections.ranking.step_2.title') }}
             </h3>
         </div>
 
         <p class="mt-3 text-sm text-(--color-muted)">
-            A pontuação é calculada automaticamente após a validação oficial do resultado da partida.
-            Assim que o resultado é confirmado no sistema, os pontos são atribuídos e o ranking é atualizado.
+            {{ __('instructions.sections.ranking.step_2.description') }}
+
         </p>
 
         <div class="mt-4 rounded-xl border border-(--color-card-border) p-4">
             <p class="text-sm font-semibold text-(--color-primary)">
-                Atualização automática
+                {{ __('instructions.sections.ranking.step_2.auto_update_title') }}
             </p>
 
             <p class="mt-2 text-sm text-(--color-muted)">
-                O ranking pode ser atualizado imediatamente após a validação do jogo.
-                Caso haja algum atraso na validação, a pontuação será ajustada automaticamente assim que o
-                resultado
-                for confirmado.
+                {{ __('instructions.sections.ranking.step_2.auto_update_description') }}
             </p>
         </div>
 

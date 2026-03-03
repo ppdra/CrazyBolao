@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LogoutController;
 use App\Livewire\AccountPage;
 use App\Livewire\HomePage;
+use App\Livewire\HowToPlayPage;
 use App\Livewire\MatchesList;
 use App\Livewire\RankingPage;
 use App\Livewire\TagsPage;
@@ -33,7 +34,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/account', AccountPage::class)->name('account');
 
-    Route::view('/how-to-play', 'how-to-play')->name('how-to-play');
+    Route::get('/how-to-play', HowToPlayPage::class)->name('how-to-play');
 
 
     Route::get('/logout', LogoutController::class)

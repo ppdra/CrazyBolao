@@ -15,7 +15,7 @@
                 
             </div>
 
-            <div class="grid grid-cols-2 gap-2 ">
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-2 ">
                 <div>
                     <x-ui.input name="password" wire:model="password" placeholder="{{ __('account.fields.password_placeholder') }}" type="password" revealable
                         class="bg-white/10 backdrop-blur text-white border-white/20" />
