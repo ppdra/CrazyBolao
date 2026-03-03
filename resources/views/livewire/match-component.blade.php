@@ -104,7 +104,7 @@
                                     <x-ui.button color='red' icon='minus' variant="outline" size="sm"
                                         wire:click="decrementScore('home')">
 
-                                    </x-ui.button>
+                                    </x-ui.button>  
 
                                     <x-ui.input class="text-center" wire:model="homeScore" type="text"
                                         min="0" disabled>

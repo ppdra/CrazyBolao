@@ -113,12 +113,12 @@ class MatchComponent extends Component
                 $this->dispatch(
                     'notify',
                     type: 'success',
-                    content: 'Bet saved successfully',
+                    content: __('notifications.bet_saved'),
                     duration: 4000
                 ) : $this->dispatch(
                     'notify',
                     type: 'error',
-                    content: 'An error occurred while saving the bet',
+                    content: __('notifications.bet_error'),
                     duration: 4000
                 );
             $this->dispatch('$refresh');
@@ -127,7 +127,7 @@ class MatchComponent extends Component
             $this->dispatch(
                 'notify',
                 type: 'error',
-                content: 'An error occurred while saving the bet',
+                content: __('notifications.bet_error'),
                 duration: 4000
             );
         }
@@ -169,12 +169,12 @@ class MatchComponent extends Component
                 $this->dispatch(
                     'notify',
                     type: 'success',
-                    content: 'Bet removed successfully',
+                    content: __('notifications.bet_removed'),
                     duration: 4000
                 ) : $this->dispatch(
                     'notify',
                     type: 'error',
-                    content: 'An error occurred while removing the bet',
+                    content: __('notifications.bet_remove_error'),
                     duration: 4000
                 );
         } catch (Exception $e) {
@@ -182,7 +182,7 @@ class MatchComponent extends Component
             $this->dispatch(
                 'notify',
                 type: 'error',
-                content: "An error occurred while removing the bet. [error => {$e->getMessage()}]",
+                content: __('notifications.bet_remove_error'),
                 duration: 4000
             );
         }

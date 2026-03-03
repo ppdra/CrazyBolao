@@ -50,7 +50,7 @@
     <div class="mt-5 grid sm:grid-cols-1 md:grid-cols-2  gap-4 place-items-center h-full">
         @foreach ($gamesList as $match)
             <div wire:key="match-{{ $match->id }}" class="w-full self-start">
-                <livewire:match-component :match="$match" />
+                <livewire:match-component :match="$match" :key="'match-'.$match->id" />
             </div>
         @endforeach
     </div>
