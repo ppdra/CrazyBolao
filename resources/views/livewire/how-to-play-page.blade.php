@@ -71,6 +71,13 @@
 
 
     <div class="space-y-5">
+    <div class="w-full overflow-hidden rounded-xl">
+        <img 
+            src="{{ asset('images/how-to/chipa-pagapix.png') }}" 
+            alt="Chimpanzé pagando com Pix"
+            class="w-full h-40 sm:h-56 md:h-90 object-cover"
+        />
+    </div>
 
         @include('components.partials.how-to-play.account-section', ['id' => '1'])
         @include('components.partials.how-to-play.how-to-play-section', ['id' => '2'])

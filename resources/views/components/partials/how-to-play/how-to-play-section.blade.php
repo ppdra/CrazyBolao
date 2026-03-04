@@ -28,23 +28,32 @@
             <span class="font-semibold text-(--color-primary)">−</span>.
         </p>
 
-        <!-- Screenshots placeholders -->
-        <div class="mt-5 grid md:grid-cols-2 gap-4">
-            <div class="rounded-xl border border-(--color-card-border) p-4">
-                <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">Mobile</p>
-                <div
-                    class="mt-3 h-56 rounded-xl border border-(--color-card-border) grid place-items-center text-xs text-(--color-muted)">
-                    {{ __('instructions.sections.how_to_play.step_1.mobile_hint') }}
-                </div>
-            </div>
+        <div class="mt-5 grid grid-cols-1 gap-4">
+            <x-ui.tabs activeTab="desktop">
+                <x-ui.tab.group class="justify-start">
+                    <x-ui.tab label="Desktop" name="desktop" icon="computer-desktop" />
+                </x-ui.tab.group>
 
-            <div class="rounded-xl border border-(--color-card-border) p-4">
-                <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">Desktop</p>
-                <div
-                    class="mt-3 h-56 rounded-xl border border-(--color-card-border) grid place-items-center text-xs text-(--color-muted)">
-                    {{ __('instructions.sections.how_to_play.step_1.desktop_hint') }}
-                </div>
-            </div>
+
+                <x-ui.tab.panel name="desktop">
+                    <div class="rounded-xl border border-(--color-card-border) bg-(--color-background) p-4">
+                        <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">
+                            Desktop
+                        </p>
+
+                        <div
+                            class="mt-3 overflow-hidden rounded-xl border border-(--color-card-border) bg-(--color-card)">
+                            <video autoplay muted loop playsinline class="w-full h-auto object-cover">
+                                <source src="{{ asset('videos/how-to/bet-success.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </x-ui.tab.panel>
+
+            </x-ui.tabs>
+
+
+
         </div>
     </div>
 
@@ -64,61 +73,35 @@
             {{ __('instructions.sections.how_to_play.step_2.description') }}
         </p>
 
-        <div class="mt-5 grid md:grid-cols-2 gap-4">
-            <div class="rounded-xl border border-(--color-card-border) p-4">
-                <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">Mobile</p>
-                <div
-                    class="mt-3 h-56 rounded-xl border border-(--color-card-border) grid place-items-center text-xs text-(--color-muted)">
-                    {{ __('instructions.sections.how_to_play.step_2.mobile_hint') }}
-                </div>
-            </div>
+        <div class="mt-5 grid grid-cols-1 gap-4">
+            <x-ui.tabs activeTab="desktop">
+                <x-ui.tab.group class="justify-start">
+                    <x-ui.tab label="Desktop" name="desktop" icon="computer-desktop" />
+                </x-ui.tab.group>
 
-            <div class="rounded-xl border border-(--color-card-border) p-4">
-                <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">Desktop</p>
-                <div
-                    class="mt-3 h-56 rounded-xl border border-(--color-card-border) grid place-items-center text-xs text-(--color-muted)">
-                    {{ __('instructions.sections.how_to_play.step_2.desktop_hint') }}
-                </div>
-            </div>
+
+                <x-ui.tab.panel name="desktop">
+                    <div class="rounded-xl border border-(--color-card-border) bg-(--color-background) p-4">
+                        <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">
+                            Desktop
+                        </p>
+
+                        <div
+                            class="mt-3 overflow-hidden rounded-xl border border-(--color-card-border) bg-(--color-card)">
+                            <video autoplay muted loop playsinline class="w-full h-auto object-cover">
+                                <source src="{{ asset('videos/how-to/bet-remove-success.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </x-ui.tab.panel>
+
+            </x-ui.tabs>
+
+
+
         </div>
     </div>
 
-    <!-- Step 3 -->
-    <div class="mt-6 rounded-2xl border border-(--color-card-border) bg-(--color-background) p-5">
-        <div class="flex items-center gap-3">
-            <div
-                class="h-8 w-8 rounded-full bg-(--color-btn) text-(--color-btn-fg) grid place-items-center text-sm font-bold">
-                3
-            </div>
-            <h3 class="text-sm md:text-base font-semibold text-(--color-primary)">
-                {{ __('instructions.sections.how_to_play.step_3.title') }}
-            </h3>
-        </div>
-
-        <p class="mt-3 text-sm text-(--color-muted)">
-            {{ __('instructions.sections.how_to_play.step_3.description') }}
-        </p>
-
-        <div class="mt-4 rounded-xl border border-(--color-card-border) bg-transparent p-4">
-            <p class="text-xs font-semibold text-(--color-muted) uppercase tracking-wide">{{ __('instructions.sections.how_to_play.labels.messages_examples') }}
-            </p>
-
-            <div class="mt-3 grid gap-2">
-                <div class="rounded-xl border border-(--color-card-border) px-4 py-3 text-sm"
-                    style="background: color-mix(in oklab, var(--color-success) 12%, transparent);
-                                border-color: color-mix(in oklab, var(--color-success) 35%, transparent);
-                                color: color-mix(in oklab, var(--color-success) 85%, white 15%);">
-                    ✅ {{ __('instructions.sections.how_to_play.step_3.success_example') }}
-                </div>
-
-                <div class="rounded-xl border border-(--color-card-border) px-4 py-3 text-sm"
-                    style="background: color-mix(in oklab, var(--color-warning) 12%, transparent);
-                                border-color: color-mix(in oklab, var(--color-warning) 35%, transparent);
-                                color: color-mix(in oklab, var(--color-warning) 85%, white 15%);">
-                    ⚠️ {{ __('instructions.sections.how_to_play.step_3.error_example') }}
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 </section>
