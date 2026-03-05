@@ -145,7 +145,7 @@
                         </div>
 
                         <div class="grid md:grid-cols-2 sm:grid-cols-1 md:gap-3 sm:gap-1">
-                            {{-- @if ($match->utc_date->isFuture()) --}}
+                            @if ($match->utc_date->isFuture())
                                 <x-ui.button variant="outline" icon='bookmark-square' color="blue" class="w-full mt-6"
                                     wire:click="saveUserBet">
                                     {{ __('match-component.actions.save') }}
@@ -158,7 +158,7 @@
                                             {{ __('match-component.actions.remove_bet') }}
                                         </x-ui.button></template>
                                 </div>
-                            {{-- @endif --}}
+                            @endif
 
 
 
@@ -166,7 +166,7 @@
 
                     </x-ui.tab.panel>
 
-                    @if ($match->utc_date->isPast())
+                    {{-- @if ($match->utc_date->isPast()) --}}
                         <x-ui.tab.panel name="results">
 
                             <div class="bg-(--color-background) border border-(--color-border)/10 rounded-2xl ">
@@ -221,7 +221,7 @@
 
                             </div>
                         </x-ui.tab.panel> --}}
-                    @endif
+                    {{-- @endif --}}
 
                 </x-ui.tabs>
             </x-ui.accordion.content>
